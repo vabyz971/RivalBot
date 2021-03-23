@@ -2,7 +2,6 @@ import os
 
 DEBUG = os.getenv("DEBUG", False)
 
-
 if DEBUG:
     print("===== DEBUG MODE ======")
     from pathlib import Path

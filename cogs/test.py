@@ -1,4 +1,4 @@
-from  discord.ext import commands
+from discord.ext import commands
 
 
 def setup(bot):
@@ -10,5 +10,9 @@ class Test(commands.Cog):
         self.bot = bot
 
     @commands.command()
-    async def hello(self,ctx, *args):
+    async def hello(self, ctx, *args):
         await ctx.send(", ".join(args))
+
+    @commands.command()
+    async def ping(self, ctx):
+        await ctx.send("Pong")
