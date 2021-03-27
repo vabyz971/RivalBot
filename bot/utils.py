@@ -1,7 +1,5 @@
 from discord.ext import commands
 
-
-
 async def notify_user(member, message):
     """ envoie un msg en mp """
     if member is not None:
@@ -20,3 +18,4 @@ def mods_or_owner():
             commands.has_role("Moderateur")
             )
     return commands.check(predicate)
+

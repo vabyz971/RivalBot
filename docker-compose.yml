@@ -1,0 +1,26 @@
+version: "3"
+services:
+
+  discord_bot:
+    container_name: 'db_bot'
+    build: 
+      context: .
+      dockerfile: ./bot/Dockerfile
+    env_file: ./bot/.env
+    entrypoint: ['python', 'main.py']
+    depends_on: 
+      - mongodb
+
+  mongodb:
+    container_name: "db_mongo"
+    image: mongo:latest
+    environment: 
+      MONGO_INTIDB_ROOT_USERNAME: root
+      MONGO_INTIDB_ROOT_PASSWORD: root
+    ports: 
+      - 27017:27017
+    volumes: 
+     - mongodb_data_container:/data/db
+
+volumes: 
+  mongodb_data_container: 

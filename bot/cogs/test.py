@@ -9,10 +9,6 @@ class Test(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-    @commands.command()
-    async def hello(self, ctx, *args):
-        await ctx.send(", ".join(args))
-
-    @commands.command()
+    @commands.command(brief="")
     async def ping(self, ctx):
         await ctx.send("Pong")
