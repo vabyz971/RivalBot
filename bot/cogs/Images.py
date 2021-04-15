@@ -24,7 +24,7 @@ class Images(commands.Cog):
 
                     await ctx.send(embed=embed)
 
-    @commands.command(brief="Affiche une image de chient aleatoire")
+    @commands.command(brief="Affiche une image de chien aleatoire")
     async def dog(self, ctx):
         async with ctx.channel.typing():
             async with aiohttp.ClientSession() as cs:

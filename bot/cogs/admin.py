@@ -1,5 +1,5 @@
+from models.prefix import addPrefix, updatePrefix, removePrefix
 from discord.ext import commands
-from models.prefix import Prefix
 
 import discord
 import datetime
@@ -70,5 +70,7 @@ class Admin(commands.Cog):
     @commands.command(brief="[ADMIN] Changer le prefix du bot")
     @commands.is_owner()
     async def prefix(self, ctx, prefix):
-        Prefix.update_prefix(ctx.guild.id, prefix)
-        await ctx.send("Prefix ajouter")
+
+        id = ctx.guild.id
+        updatePrefix(id, prefix)
+        await ctx.send(f"Prefix modifier **{prefix}**")
